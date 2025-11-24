@@ -1,0 +1,372 @@
+/* 🌊 Sea-themed background with glassmorphism content */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    overflow-x: hidden;
+}
+
+/* Sea background overlay */
+.bg-wave {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #a8edea, #fed6e3);
+    z-index: -2;
+}
+
+.bg-wave::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 70%),
+                radial-gradient(circle at 80% 40%, rgba(255,255,255,0.4), transparent 70%);
+    z-index: -1;
+    animation: floatwave 15s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes floatwave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+    100% { transform: translateY(0); }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('wave-overlay.svg'); /* หรือภาพทะเลแนวใส */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -3;
+}
+
+/* Floating container */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 60px auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* Profile */
+img.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+h1.name {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    color: #004d7a;
+}
+
+span.slogan {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #0077b6;
+    margin-bottom: 30px;
+}
+
+/* Social Media Icons */
+.social-img ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.social-img ul li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 150ms ease-in-out, transform 0.2s;
+}
+
+.social-img ul li i {
+    font-size: 22px;
+    color: #004d7a;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-img ul li:hover {
+    background: #ffffff;
+    transform: scale(1.2);
+}
+
+.social-img ul li:hover i.fa-x-twitter {
+    color: #000000;
+}
+.social-img ul li:hover i.fa-linkedin-in {
+    color: #0077B5;
+}
+.social-img ul li:hover i.fa-github {
+    color: #333333;
+}
+.social-img ul li:hover i.fa-facebook-f {
+    color: #1877F2;
+}
+
+/* Bio Section */
+p.bio {
+    text-align: center;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Section Headings */
+h5 {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 50px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: #023e8a;
+}
+
+/* ✅ ปรับ width ให้มีหน่วย */
+hr {
+    width: 100%;
+    height: 2px;
+    background-color: #00b4d8;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+/* Portfolio */
+.work {
+    margin-bottom: 20px;
+}
+
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.work img:hover {
+    transform: scale(1.03);
+}
+
+/* Contact Form */
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+form .button {
+    background-color: #00b4d8;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form .button:hover {
+    background-color: #0077b6;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    color: rgba(51, 51, 51, 0.6);
+    font-size: 14px;
+}
+.bubble-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* ให้คลิกผ่านได้ */
+  z-index: -1;
+  overflow: hidden;
+}
+.bubble-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6); /* สีฟองชัดขึ้น */
+  opacity: 0.8;
+  animation: rise 12s ease-in infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* 🎈 ปรับขนาด ตำแหน่ง เวลาแตกต่าง */
+.bubble1  { width: 12px; height: 12px; left: 5%;  animation-delay: 0s;  animation-duration: 10s; }
+.bubble2  { width: 20px; height: 20px; left: 15%; animation-delay: 2s;  animation-duration: 14s; }
+.bubble3  { width: 16px; height: 16px; left: 25%; animation-delay: 4s;  animation-duration: 12s; }
+.bubble4  { width: 10px; height: 10px; left: 35%; animation-delay: 1s;  animation-duration: 11s; }
+.bubble5  { width: 18px; height: 18px; left: 45%; animation-delay: 3s;  animation-duration: 13s; }
+.bubble6  { width: 14px; height: 14px; left: 55%; animation-delay: 1.5s;animation-duration: 10s; }
+.bubble7  { width: 22px; height: 22px; left: 65%; animation-delay: 2.5s;animation-duration: 15s; }
+.bubble8  { width: 12px; height: 12px; left: 75%; animation-delay: 0.5s;animation-duration: 9s; }
+.bubble9  { width: 18px; height: 18px; left: 85%; animation-delay: 1s;  animation-duration: 11s; }
+.bubble10 { width: 10px; height: 10px; left: 95%; animation-delay: 3s;  animation-duration: 13s; }
+.bubble11 { width: 15px; height: 15px; left: 20%; animation-delay: 4s;  animation-duration: 10s; }
+.bubble12 { width: 17px; height: 17px; left: 40%; animation-delay: 2s;  animation-duration: 12s; }
+.bubble13 { width: 13px; height: 13px; left: 60%; animation-delay: 5s;  animation-duration: 10s; }
+.bubble14 { width: 19px; height: 19px; left: 80%; animation-delay: 0s;  animation-duration: 11s; }
+.bubble15 { width: 14px; height: 14px; left: 50%; animation-delay: 1s;  animation-duration: 14s; }
+
+.shimmer-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  animation: shimmerMove 15s ease-in-out infinite;
+  opacity: 0.6;
+  mix-blend-mode: screen; /* ทำให้ระยิบเบลนด์กับพื้นหลัง */
+}
+
+@keyframes shimmerMove {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-10%, -10%) rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: translate(0%, 0%) rotate(360deg) scale(1);
+  }
+}
+.work {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* ทำให้ทุกภาพสัดส่วน 16:9 */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ตัดภาพให้เต็มกรอบแบบไม่บิดเบี้ยว */
+  display: block;
+}
+.bio.sea-theme {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  color: #044655;
+  line-height: 1.75;
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.bio.sea-theme p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.bio.sea-theme .emoji {
+  margin-right: 5px;
+  font-size: 1.2em;
+}
+
+.bio.sea-theme .highlight {
+  font-weight: 600;
+  color: #007a9a;
+}
+
+.bio.sea-theme .closing {
+  text-align: center;
+  font-style: italic;
+  color: #066d87;
+}
+/* ✅ แก้ระยะห่างตัวอักษรของ bio paragraph */
+.bio.sea-theme p {
+  margin-bottom: 22px;
+  line-height: 1.8;         /* ให้พอดี อ่านง่าย */
+  letter-spacing: normal;   /* ลดช่องว่างระหว่างตัวอักษร */
+  font-size: 16px;
+}
+
+/* ✅ ลดความหนาพิเศษเกินไปของ <strong> ใน bio */
+.bio.sea-theme strong {
+  font-weight: 600; /* จาก 700 หรือ 800 ลดเหลือ 600 ให้อ่านง่ายขึ้น */
+}
+
+/* ✅ เพิ่มระยะห่างก่อน portfolio */
+#portfolio {
+  margin-top: 40px;  /* ปรับค่าตามต้องการ */
+  text-align: center;
+  font-size: 1.6rem;
+}
