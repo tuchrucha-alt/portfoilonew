@@ -370,3 +370,13 @@ form .button:hover {
   text-align: center;
   font-size: 1.6rem;
 }
+.container img[alt="profile"] {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
