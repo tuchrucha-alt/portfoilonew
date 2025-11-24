@@ -54,7 +54,7 @@ body::before {
     padding: 30px;
     border-radius: 12px;
     max-width: 700px;
-    margin: 60px auto;
+    margin: 60px auto 120px; /* เพิ่มช่องให้ปุ่ม BACK ไม่ทับ */
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     position: relative;
     z-index: 1;
@@ -144,50 +144,6 @@ h1.name {
     text-align: justify;
 }
 
-/* ================= CTA BUTTON ================== */
-.cta-wrapper {
-    text-align: center;
-    margin: 25px 0 10px;
-}
-
-.btn-primary,
-.btn-secondary {
-  display: inline-block;
-  padding: 10px 26px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.btn-primary {
-  background: rgba(0, 180, 216, 0.9);
-  color: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 119, 182, 0.45);
-}
-
-.btn-primary:hover {
-  background: rgba(0, 119, 182, 1);
-  box-shadow: 0 10px 26px rgba(0, 119, 182, 0.6);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: rgba(255,255,255,0.18);
-  color: #023e8a;
-}
-
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.3);
-  transform: translateY(-1px);
-}
-
 /* ================= PORTFOLIO THUMB AREA ================== */
 .work {
   width: 100%;
@@ -241,6 +197,35 @@ form .button:hover {
     font-size: 14px;
 }
 
+/* ================= FIXED BACK BUTTON ================== */
+.btn-back-fixed {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.2);
+  color: #014f86;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease, bottom 0.3s ease;
+  z-index: 10;
+}
+
+.btn-back-fixed:hover {
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%) translateY(-2px);
+}
+
 /* ================= BUBBLES ================== */
 .bubble-container {
   position: fixed;
@@ -266,23 +251,15 @@ form .button:hover {
   100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
 }
 
-/* ปรับ Random Bubble */
-.bubble1  { width: 12px; height: 12px; left: 5%; animation-delay: 0s; animation-duration: 10s; }
-.bubble2  { width: 20px; height: 20px; left: 15%; animation-delay: 2s; animation-duration: 14s; }
-.bubble3  { width: 16px; height: 16px; left: 25%; animation-delay: 4s; animation-duration: 12s; }
-.bubble4  { width: 10px; height: 10px; left: 35%; animation-delay: 1s; animation-duration: 11s; }
-.bubble5  { width: 18px; height: 18px; left: 45%; animation-delay: 3s; animation-duration: 13s; }
-.bubble6  { width: 14px; height: 14px; left: 55%; animation-delay: 1.5s; animation-duration: 10s; }
-.bubble7  { width: 22px; height: 22px; left: 65%; animation-delay: 2.5s; animation-duration: 15s; }
-.bubble8  { width: 12px; height: 12px; left: 75%; animation-delay: 0.5s; animation-duration: 9s; }
-.bubble9  { width: 18px; height: 18px; left: 85%; animation-delay: 1s; animation-duration: 11s; }
-.bubble10 { width: 10px; height: 10px; left: 95%; animation-delay: 3s; animation-duration: 13s; }
-
 /* ================= RESPONSIVE ================== */
 @media screen and (max-width: 768px) {
   .container {
-    margin: 30px 12px;
+    margin: 30px 12px 110px;
     padding: 20px;
+  }
+  .btn-back-fixed {
+    bottom: 14px;
+    padding: 10px 22px;
   }
 }
 
@@ -290,4 +267,8 @@ form .button:hover {
   h1.name { font-size: 1.4rem; }
   .slogan { font-size: 0.8rem; }
   .profile-img { width: 160px; height: 160px; }
+  .btn-back-fixed {
+    font-size: 0.8rem;
+    padding: 8px 20px;
+  }
 }
