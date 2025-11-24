@@ -9,28 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.9.0/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-<!-- 🫧 Floating Bubbles -->
-<div class="bubble-container">
-  <div class="bubble bubble1"></div><div class="bubble bubble2"></div><div class="bubble bubble3"></div>
-  <div class="bubble bubble4"></div><div class="bubble bubble5"></div><div class="bubble bubble6"></div>
-  <div class="bubble bubble7"></div><div class="bubble bubble8"></div><div class="bubble bubble9"></div>
-  <div class="bubble bubble10"></div>
-</div>
-
-<div class="shimmer-light"></div>
 <div class="bg-wave"></div>
+<div class="bubble-container"></div>
 
-<!-- MAIN CONTENT -->
 <div class="container">
 
-    <img src="public/image/profile.jpg" alt="profile" class="profile-img">
+    <!-- PROFILE -->
+    <img class="profile-img" src="image/profile.jpg" alt="">
 
     <h1 class="name">Ratchanon Nanok</h1>
     <span class="slogan">Information Technology</span>
 
-    <!-- 🌐 Social Media -->
+    <!-- SOCIAL -->
     <div class="social-img">
         <ul>
             <li><a href="https://x.com/tuchrucha" target="_blank"><i class="fab fa-x-twitter"></i></a></li>
@@ -40,51 +33,56 @@
         </ul>
     </div>
 
-    <!-- 📌 BIO -->
+    <!-- BIO -->
     <div class="bio sea-theme">
-      <p>🌊 <strong>Hi there! I'm Ratchanon Nanok</strong>, currently sailing through my studies at <strong>Sripatum University, Khon Kaen Campus</strong>, majoring in <strong>Multimedia Technology</strong>.</p>
-      <p>I'm passionate about both creativity and technology — I enjoy the flow of <strong>graphic design</strong> & <strong>website development</strong> using tools like <strong>Photoshop</strong>, <strong>Illustrator</strong>, <strong>After Effects</strong>, and <strong>Premiere Pro</strong>.</p>
-      <p>🧑‍💻 Technically, I use <strong>Visual Studio Code</strong>, create <strong>2D games</strong> and code in <strong>Python</strong>.</p>
-      <p>Thanks for stopping by — dive into my portfolio below! 🐚🌴</p>
+        <p>🌊 <strong>Hi there! I'm Ratchanon Nanok</strong>, currently sailing through my studies at <strong>Sripatum University, Khon Kaen Campus</strong>, majoring in <strong>Multimedia Technology</strong>.</p>
+
+        <p>I'm passionate about creativity and technology — I enjoy <strong>graphic design</strong> & <strong>website development</strong> using <strong>Photoshop</strong>, <strong>Illustrator</strong>, <strong>After Effects</strong>, <strong>Premiere Pro</strong>.</p>
+
+        <p>🧑‍💻 I use <strong>Visual Studio Code</strong>, build <strong>2D games</strong>, and code in <strong>Python</strong>.</p>
+
+        <p>Thanks for visiting — dive into my portfolio below! 🐚🌴</p>
     </div>
 
-    <!-- 🌊 CTA BUTTON -->
+    <!-- BUTTON -->
     <div class="cta-wrapper">
-     <a href="work.html" class="btn-primary">View My Full Portfolio</a>
+        <a href="works.html" class="btn-primary">VIEW MY FULL PORTFOLIO</a>
     </div>
 
-    <!-- 🎨 PORTFOLIO -->
+    <!-- PORTFOLIO -->
     <h5 id="portfolio">Portfolio</h5>
     <hr>
 
     <div class="row">
-        <div class="small-6 columns"><div class="work"><img src="public/image/anime-character-traveling.jpg" alt="portfolio-img"></div></div>
-        <div class="small-6 columns"><div class="work"><img src="public/image/anime-style-boy-girl-couple.jpg" alt="portfolio-img"></div></div>
-        <div class="small-6 columns"><div class="work"><img src="public/image/beautiful-anime-flowers-cartoon-scene.jpg" alt="portfolio-img"></div></div>
-        <div class="small-6 columns"><div class="work"><img src="public/image/river-landscape-illustration-pixel-art-style.jpg" alt="portfolio-img"></div></div>
+        <div class="small-6 columns"><div class="work"><img src="image/anime-character-traveling.jpg"></div></div>
+        <div class="small-6 columns"><div class="work"><img src="image/anime-style-boy-girl-couple.jpg"></div></div>
+        <div class="small-6 columns"><div class="work"><img src="image/beautiful-anime-flowers-cartoon-scene.jpg"></div></div>
+        <div class="small-6 columns"><div class="work"><img src="image/river-landscape-illustration-pixel-art-style.jpg"></div></div>
     </div>
 
-    <!-- 📬 CONTACT -->
+    <!-- CONTACT -->
     <h5>Contact Me</h5>
     <hr>
 
-    <form action="https://formspree.io/f/manaoppa" method="POST" onsubmit="setTimeout(() => this.reset(), 100);">
-      <div class="row">
-        <div class="medium-6 columns"><label>Name:<input type="text" name="name" required></label></div>
-        <div class="medium-6 columns"><label>Email:<input type="email" name="email" required></label></div>
-        <div class="medium-12 columns">
-          <label>Message:<textarea name="message" required></textarea></label>
-          <div style="text-align:center;"><button class="button" type="submit">Send</button></div>
-        </div>
-      </div>
+    <form action="https://formspree.io/f/manaoppa" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Message:</label>
+        <textarea name="message" required></textarea>
+
+        <button class="button" type="submit">Send</button>
     </form>
 
-    <!-- 🏁 FOOTER -->
+    <!-- FOOTER -->
     <div class="footer">
-      Sripatum University Khonkaen Campus &copy; <script>document.write(new Date().getFullYear())</script>. All Right Reserved
+        Sripatum University Khonkaen Campus © <script>document.write(new Date().getFullYear())</script>. All Rights Reserved
     </div>
 
 </div>
+
 </body>
 </html>
-
