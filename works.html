@@ -3,120 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Gallery - Ratchanon</title>
+    <title>My Works - Ratchanon</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.9.0/css/foundation.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.9.0/css/foundation-float.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<!-- พื้นหลังฟองอากาศ + แสงเหมือนหน้าแรก -->
+<!-- 🫧 Bubbles + Wave -->
 <div class="bubble-container">
-  <div class="bubble bubble1"></div>
-  <div class="bubble bubble2"></div>
-  <div class="bubble bubble3"></div>
-  <div class="bubble bubble4"></div>
-  <div class="bubble bubble5"></div>
-  <div class="bubble bubble6"></div>
-  <div class="bubble bubble7"></div>
-  <div class="bubble bubble8"></div>
-  <div class="bubble bubble9"></div>
-  <div class="bubble bubble10"></div>
-  <div class="bubble bubble11"></div>
-  <div class="bubble bubble12"></div>
-  <div class="bubble bubble13"></div>
-  <div class="bubble bubble14"></div>
-  <div class="bubble bubble15"></div>
+  <div class="bubble bubble1"></div><div class="bubble bubble2"></div><div class="bubble bubble3"></div>
+  <div class="bubble bubble4"></div><div class="bubble bubble5"></div><div class="bubble bubble6"></div>
+  <div class="bubble bubble7"></div><div class="bubble bubble8"></div><div class="bubble bubble9"></div>
+  <div class="bubble bubble10"></div><div class="bubble bubble11"></div><div class="bubble bubble12"></div>
+  <div class="bubble bubble13"></div><div class="bubble bubble14"></div><div class="bubble bubble15"></div>
 </div>
-
 <div class="shimmer-light"></div>
 <div class="bg-wave"></div>
 
-<div class="container gallery-container">
-  <!-- Header ของหน้า Gallery -->
-  <header class="gallery-header">
-    <h1 class="name">Portfolio Gallery</h1>
-    <p class="gallery-subtitle">
-      A collection of my works in <strong>illustration</strong>, <strong>graphics</strong>, and <strong>multimedia design</strong>.  
-      More projects are coming soon 🌊
-    </p>
+<!-- 🔷 MAIN WORK CONTAINER -->
+<div class="container">
 
-    <!-- ปุ่มกลับหน้าแรก -->
+    <h1 class="name" style="margin-bottom: 5px;">Portfolio Gallery</h1>
+    <p class="slogan" style="margin-bottom: 25px;">My Creative & Visual Works</p>
+
+    <!-- 🔙 Back Button -->
     <div class="cta-wrapper">
-      <a href="index.html" class="btn-secondary">
-        ← Back to Home
-      </a>
+        <a href="index.html" class="btn-primary" style="background:rgba(255,255,255,0.3);color:#023e8a;border:1px solid rgba(255,255,255,0.8);">
+            ← Back to Home
+        </a>
     </div>
-  </header>
 
-  <!-- Grid โชว์ผลงานแบบ Placeholder -->
-  <section class="gallery">
-    <div class="gallery-grid">
-      
-      <!-- การ์ดที่ 1 -->
-      <article class="gallery-item">
-        <div class="gallery-thumb placeholder-1">
-          <span class="badge">Coming Soon</span>
-        </div>
-        <h3>Illustration & Concept Art</h3>
-        <p>Character and world-building sketches, blending anime-inspired style with soft color palettes.</p>
-      </article>
-
-      <!-- การ์ดที่ 2 -->
-      <article class="gallery-item">
-        <div class="gallery-thumb placeholder-2">
-          <span class="badge">Coming Soon</span>
-        </div>
-        <h3>Graphic Design</h3>
-        <p>Posters, social media posts, and branding graphics with clean layouts and strong typography.</p>
-      </article>
-
-      <!-- การ์ดที่ 3 -->
-      <article class="gallery-item">
-        <div class="gallery-thumb placeholder-3">
-          <span class="badge">Coming Soon</span>
-        </div>
-        <h3>Web & UI Mockups</h3>
-        <p>Modern landing pages and UI wireframes designed with usability and aesthetics in mind.</p>
-      </article>
-
-      <!-- การ์ดที่ 4 -->
-      <article class="gallery-item">
-        <div class="gallery-thumb placeholder-4">
-          <span class="badge">Coming Soon</span>
-        </div>
-        <h3>Motion Graphics</h3>
-        <p>Short animated sequences built with After Effects for intros, transitions, and promos.</p>
-      </article>
-
-      <!-- การ์ดที่ 5 -->
-      <article class="gallery-item">
-        <div class="gallery-thumb placeholder-5">
-          <span class="badge">Coming Soon</span>
-        </div>
-        <h3>2D Game Art</h3>
-        <p>Sprite sheets, tiles, and environments created for 2D game prototypes.</p>
-      </article>
-
-      <!-- การ์ดที่ 6 -->
-      <article class="gallery-item">
-        <div class="gallery-thumb placeholder-6">
-          <span class="badge">Coming Soon</span>
-        </div>
-        <h3>Experimental Projects</h3>
-        <p>Fun experiments mixing code, visuals, and interactions using tools like VS Code and web tech.</p>
-      </article>
-
+    <!-- 🎨 Portfolio Grid -->
+    <div class="row">
+        <div class="small-6 columns"><div class="work"><img src="image/anime-character-traveling.jpg"></div></div>
+        <div class="small-6 columns"><div class="work"><img src="image/anime-style-boy-girl-couple.jpg"></div></div>
+        <div class="small-6 columns"><div class="work"><img src="image/beautiful-anime-flowers-cartoon-scene.jpg"></div></div>
+        <div class="small-6 columns"><div class="work"><img src="image/river-landscape-illustration-pixel-art-style.jpg"></div></div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <div class="footer gallery-footer">
-    More works will be added soon. Stay tuned 🌊✨
-  </div>
+    <div class="footer" style="margin-top:20px;">
+        More works will be updated soon 🌊✨
+    </div>
+
 </div>
-
 </body>
 </html>
