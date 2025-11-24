@@ -1,30 +1,29 @@
-/* 🌊 Sea-themed background with glassmorphism content */
+/* 🌊 SEA PORTFOLIO UI — FULL FIXED VERSION */
+
+/* ===== BACKGROUND ===== */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    position: relative;
+    font-family: 'Segoe UI', sans-serif;
     min-height: 100vh;
     background: linear-gradient(120deg, #89f7fe, #66a6ff);
     overflow-x: hidden;
 }
 
-/* Wave Overlay */
+/* ===== WAVE BACKGROUND ===== */
 .bg-wave {
-    position: fixed;
-    top: 0; left: 0;
+    position: fixed; inset: 0;
     width: 100%; height: 100%;
     background: linear-gradient(to bottom right, #a8edea, #fed6e3);
     z-index: -2;
 }
 .bg-wave::after {
     content: "";
-    position: absolute;
-    top: 0; left: 0;
+    position: absolute; inset: 0;
     width: 200%; height: 200%;
     background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 70%),
                 radial-gradient(circle at 80% 40%, rgba(255,255,255,0.4), transparent 70%);
     animation: floatwave 15s ease-in-out infinite;
-    opacity: 0.6; z-index: -1;
+    opacity: 0.6;
 }
 @keyframes floatwave {
     0% { transform: translateY(0); }
@@ -32,289 +31,397 @@ body {
     100% { transform: translateY(0); }
 }
 
-/* ✨ Shine Effect */
-.shimmer-light {
-  position: fixed;
-  top: 0; left: 0;
-  width: 200%; height: 200%;
-  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.12) 0%, transparent 50%);
-  animation: shimmerMove 15s ease-in-out infinite;
-  opacity: 0.6;
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-@keyframes shimmerMove {
-  0% { transform: translate(0%, 0%) rotate(0deg) scale(1);}
-  50% { transform: translate(-10%, -10%) rotate(180deg) scale(1.1);}
-  100% { transform: translate(0%, 0%) rotate(360deg) scale(1);}
-}
-
-/* Floating Glass Container */
+/* ===== MAIN GLASS CARD ===== */
 .container {
-    background: rgba(255, 255, 255, 0.22);
+    background: rgba(255,255,255,0.23);
     backdrop-filter: blur(10px);
-    border-radius: 12px;
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 760px;
     padding: 30px;
-    max-width: 700px;
-    margin: 60px auto;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    z-index: 1;
+    margin: 40px auto;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
 }
 
-/* ================= PROFILE ================== */
+/* ===== PROFILE ===== */
 .profile-img {
-    width: 200px; height: 200px;
+    width: 185px; height: 185px;
     border-radius: 50%;
+    margin: 0 auto 12px;
     display: block;
-    margin: 0 auto 18px;
     object-fit: cover;
-    border: 4px solid rgba(255,255,255,0.7);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 4px solid rgba(255,255,255,0.75);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    transition: 0.3s;
 }
 .profile-img:hover {
-    transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+    transform: translateY(-4px) scale(1.05);
 }
 
-/* ================= NAME + SLOGAN ================== */
+/* ===== NAME & SLOGAN ===== */
 h1.name {
-    text-transform: uppercase;
-    font-size: 1.8rem;
     text-align: center;
+    margin-top: 10px;
+    font-size: 1.7rem;
     color: #004d7a;
 }
 .slogan {
-    display: block;
     text-align: center;
     font-size: 14px;
+    font-weight: 600;
+    color: #006ba6;
+    margin-top: 4px;
+    letter-spacing: 0.8px;
+    display: block;
     text-transform: uppercase;
-    color: #0077b6;
-    margin-bottom: 20px;
 }
 
-/* ================= SOCIAL ICONS ================== */
-.social-img ul { text-align: center; margin-bottom: 35px; padding: 0; }
-.social-img ul li {
-    display: inline-flex; justify-content: center; align-items: center;
-    width: 50px; height: 50px;
-    background: rgba(255,255,255,0.7);
-    border-radius: 50%; cursor: pointer;
-    margin: 0 10px; transition: .25s;
+/* ===== SOCIAL ICONS ===== */
+.social-img ul {
+    padding:0; margin: 18px 0 28px;
+    text-align:center;
 }
-.social-img ul li:hover { background: white; transform: scale(1.2); }
-.social-img ul li i { font-size: 22px; color: #004d7a; }
+.social-img li {
+    display: inline-flex;
+    justify-content:center;
+    align-items:center;
+    width: 46px; height: 46px;
+    margin: 0 8px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.social-img li:hover { transform: scale(1.2); background: white; }
+.social-img li i { font-size: 20px; color:#004d7a; }
 
-/* ================= BIO ================== */
+/* ===== BIO CARD ===== */
 .bio.sea-theme {
-    background: rgba(255,255,255,0.08);
-    padding: 30px; border-radius: 16px;
-    line-height: 1.75; color: #044655;
-    margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background: rgba(255,255,255,0.1);
+    padding: 25px 22px;
+    border-radius: 12px;
+    line-height: 1.7;
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: #044655;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-.bio.sea-theme p { margin-bottom: 22px; }
+.bio.sea-theme strong { font-weight: 600; }
 
-/* ================= CTA BUTTON ================== */
-.cta-wrapper { text-align: center; margin: 25px 0 10px; }
+/* ===== PRIMARY BUTTON ===== */
+.cta-wrapper {
+    text-align: center;
+    margin: 25px 0 38px;
+}
 .btn-primary {
-  padding: 10px 26px; border-radius: 999px; text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.8); font-size: .95rem;
-  color: white; background: rgba(0, 180, 216, .9);
-  text-decoration: none; letter-spacing: .04em;
-  box-shadow: 0 6px 18px rgba(0, 119, 182, .45);
-  transition: .3s; display: inline-block;
+    display: inline-block;
+    padding: 13px 35px;
+    border-radius: 999px;
+    background: linear-gradient(45deg, #00b4d8, #0096c7);
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: 0 8px 18px rgba(0,150,200,0.45);
+    transition: 0.3s;
 }
 .btn-primary:hover {
-  background: #0077b6; box-shadow: 0 10px 26px rgba(0, 119, 182, .6);
-  transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(0,150,200,0.6);
 }
 
-/* ================= PORTFOLIO ================== */
+/* ===== PORTFOLIO THUMBS ===== */
 .work {
-  width: 100%; aspect-ratio: 16/9; overflow: hidden;
-  border-radius: 12px; margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow:hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 .work img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform .3s ease;
+    width:100%; height:100%;
+    object-fit: cover;
+    transition: 0.3s;
 }
-.work img:hover { transform: scale(1.03); }
+.work img:hover { transform: scale(1.05); }
 
-/* ================= FORM ================== */
+/* ===== SECTION TITLES ===== */
+h5 {
+    text-align: center !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #023e8a;
+    margin-bottom: 12px;
+}
+
+/* ================= CONTACT FORM ================== */
+form { 
+    max-width: 650px; 
+    margin: 0 auto;
+}
+
+/* Labels */
+form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #023e8a;
+    display: block;
+    margin-bottom: 6px;
+    padding-left: 4px;
+}
+
+/* Inputs & Textarea */
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.85);
+    margin-bottom: 20px;
+    font-size: 15px;
+    outline: none;
+    transition: box-shadow 0.25s ease, border 0.25s ease;
+}
+
+/* Focus Animation */
+form input:focus,
+form textarea:focus {
+    border: 1px solid #00b4d8;
+    box-shadow: 0 0 12px rgba(0,180,216,0.45);
+}
+
+/* Send Button */
+form button.button {
+    display: block;
+    margin: 12px auto 0;
+    width: 160px;
+    background: rgba(0, 180, 216, 0.9);
+    padding: 10px 0;
+    color:white;
+    font-weight: 600;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+form button.button:hover {
+    background: #0077b6;
+    transform: translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align:center;
+    padding:18px;
+    color:rgba(0,0,0,0.45);
+    font-size:13px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px){
+    .profile-img{ width:145px; height:145px; }
+    h1.name{ font-size:1.4rem; }
+    .btn-primary{ padding:10px 24px; font-size:0.8rem; }
+}
+
+/* ===== MAIN GLASS CARD ===== */
+.container {
+    background: rgba(255,255,255,0.23);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    max-width: 760px;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+/* ===== PROFILE ===== */
+.profile-img {
+    width: 185px; height: 185px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: block;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.75);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    transition: 0.3s;
+}
+.profile-img:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* ===== NAME & SLOGAN ===== */
+h1.name {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.7rem;
+    color: #004d7a;
+}
+.slogan {
+    text-align: center;
+    font-size: 13px;
+    color: #0077b6;
+    text-transform: uppercase;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-img ul {
+    padding:0; margin: 12px 0 28px;
+    text-align:center;
+}
+.social-img li {
+    display: inline-flex;
+    justify-content:center;
+    align-items:center;
+    width: 46px; height: 46px;
+    margin: 0 8px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.social-img li:hover {
+    transform: scale(1.2);
+    background: white;
+}
+.social-img li i { font-size: 20px; color:#004d7a; }
+
+/* ===== BIO CARD ===== */
+.bio.sea-theme {
+    background: rgba(255,255,255,0.1);
+    padding: 25px 22px;
+    border-radius: 12px;
+    line-height: 1.7;
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: #044655;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.bio.sea-theme strong { font-weight: 600; }
+
+/* ===== PRIMARY BUTTON (FIX CENTER) ===== */
+.cta-wrapper {
+    text-align: center;
+    margin: 25px 0 38px;
+}
+.btn-primary {
+    display: inline-block;
+    padding: 11px 32px;
+    border-radius: 999px;
+    background: linear-gradient(45deg, #00b4d8, #0096c7);
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: 0 8px 18px rgba(0,150,200,0.45);
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(0,150,200,0.6);
+}
+
+/* ===== PORTFOLIO THUMBS (FIXED SIZE) ===== */
+.work {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow:hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.work img {
+    width:100%; height:100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.work img:hover { transform: scale(1.05); }
+
+/* ===== FORM ===== */
 form input, form textarea {
-    width: 100%; padding: 12px; border: 1px solid #ccc;
-    margin-bottom: 10px; border-radius: 6px;
+    width: 100%; padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
 }
-form .button { background: #00b4d8; color: #fff; padding: 12px 20px;
-    border: none; border-radius: 6px; cursor: pointer; transition: .3s;
+form .button {
+    background:#00b4d8; border:none;
+    padding: 10px 20px;
+    color:white; border-radius:6px;
+    transition:0.3s;
 }
-form .button:hover { background: #0077b6; }
+form .button:hover { background:#0077b6; }
 
-/* ================= FOOTER ================== */
-.footer { text-align: center; padding: 20px 0; color: rgba(51,51,51,.6); font-size: 14px; }
-
-/* ================= BUBBLES ================== */
-.bubble-container { position: fixed; width:100%; height:100%; z-index:-1; pointer-events:none; }
-.bubble {
-  position: absolute; bottom: -50px; border-radius: 50%;
-  background: rgba(255,255,255,.6); opacity: .8; animation: rise 12s ease-in infinite;
-}
-@keyframes rise {
- 0%{ transform: translateY(0) scale(1); opacity:.6;}
- 50%{ opacity:1;}
- 100%{ transform: translateY(-120vh) scale(.5); opacity:0;}
-}
-.bubble1{width:12px;height:12px;left:5%;animation-delay:0s;}
-.bubble2{width:20px;height:20px;left:15%;animation-delay:2s;}
-.bubble3{width:16px;height:16px;left:25%;animation-delay:4s;}
-.bubble4{width:10px;height:10px;left:35%;animation-delay:1s;}
-.bubble5{width:18px;height:18px;left:45%;animation-delay:3s;}
-.bubble6{width:14px;height:14px;left:55%;animation-delay:1.5s;}
-.bubble7{width:22px;height:22px;left:65%;animation-delay:2.5s;}
-.bubble8{width:12px;height:12px;left:75%;animation-delay:.5s;}
-.bubble9{width:18px;height:18px;left:85%;animation-delay:1s;}
-.bubble10{width:10px;height:10px;left:95%;animation-delay:3s;}
-
-/* ================= RESPONSIVE ================== */
-@media screen and (max-width: 768px) { .container { margin: 30px 12px; padding: 20px; } }
-@media screen and (max-width: 480px) {
-  h1.name { font-size: 1.4rem; }
-  .slogan { font-size: .8rem; }
-  .profile-img { width: 160px; height: 160px; }
-}
-/* ==================== GALLERY PAGE / WORK ===================== */
-
-/* กล่องรวมของหน้า Gallery */
-.gallery-container {
-  max-width: 1000px;
-  margin: 70px auto;
-  padding: 40px;
+/* ===== FOOTER ===== */
+.footer {
+    text-align:center;
+    padding:18px;
+    color:rgba(0,0,0,0.45);
+    font-size:13px;
 }
 
-/* Header ของหน้า Gallery */
-.gallery-header h1.name {
-  font-size: 2rem;
-  margin-bottom: 10px;
+/* ===== RESPONSIVE FIX ===== */
+@media (max-width: 480px){
+    .profile-img{ width:145px; height:145px; }
+    h1.name{ font-size:1.4rem; }
+    .btn-primary{ padding:10px 24px; font-size:0.8rem; }
+}
+/* ================= CONTACT FORM FIX ================== */
+#contact-title, h5 {
+    text-align: center !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #023e8a;
+    margin-bottom: 10px;
 }
 
-.gallery-subtitle {
-  text-align: center;
-  color: #044655;
-  font-size: 1rem;
-  margin-bottom: 25px;
-  line-height: 1.6;
+form {
+    max-width: 650px;
+    margin: 0 auto; /* ให้ฟอร์มอยู่ตรงกลาง */
 }
 
-/* ปุ่ม Back ให้ไปอยู่ล่าง Header */
-.gallery-header .cta-wrapper {
-  margin-bottom: 40px;
+form label {
+    font-size: 14px;
+    color: #023e8a;
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* ==================== GALLERY GRID ===================== */
-.gallery {
-  margin-top: 20px;
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.7);
+    margin-bottom: 18px;
+    font-size: 15px;
+    outline: none;
+    transition: box-shadow 0.2s ease, border 0.2s ease;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+/* effect เวลาเลือก input */
+form input:focus,
+form textarea:focus {
+    border: 1px solid #00b4d8;
+    box-shadow: 0 0 10px rgba(0,180,216,0.4);
 }
 
-/* Card */
-.gallery-item {
-  background: rgba(255,255,255,0.15);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ปุ่ม SEND ตรงกลาง */
+form button.button {
+    display: block;
+    margin: 10px auto 0;
+    width: 140px;
+    background: rgba(0, 180, 216, 0.9);
+    padding: 10px 0;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.3s ease;
 }
 
-.gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+form button.button:hover {
+    background: #0077b6;
+    transform: translateY(-2px);
 }
-
-/* Thumbnail Placeholder */
-.gallery-thumb {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #90e0ef, #48cae4);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* เติมลายคลื่นเบาๆ เหมือนน้ำ */
-.gallery-thumb::after {
-  content: "";
-  width: 130%;
-  height: 130%;
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.35), transparent 70%);
-  position: absolute;
-  opacity: 0.5;
-  animation: waveFloat 6s infinite ease-in-out;
-}
-
-@keyframes waveFloat {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(180deg); }
-  100% { transform: translateY(0) rotate(360deg); }
-}
-
-/* Badge “Coming Soon” */
-.badge {
-  background: rgba(255,255,255,0.9);
-  color: #0077b6;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* ส่วนหัวของ Card */
-.gallery-item h3 {
-  margin-top: 12px;
-  color: #023e8a;
-  font-size: 1.05rem;
-}
-
-/* คำอธิบายของ Card */
-.gallery-item p {
-  color: #055464;
-  font-size: 0.9rem;
-  line-height: 1.45;
-  margin-top: 6px;
-}
-
-/* Footer ของหน้า Gallery */
-.gallery-footer {
-  text-align: center;
-  margin-top: 35px;
-  color: rgba(0, 0, 0, 0.55);
-}
-
-/* ============== Responsive ============== */
-@media (max-width: 900px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-  .gallery-container {
-    padding: 20px;
-  }
-}
-
-
